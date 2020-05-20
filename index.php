@@ -8,13 +8,17 @@
     <title>PHP Dischi</title>
 </head>
 <body>
-    <?php include 'partials-php/main-content.php';?>
+    <!-- Include content array from main-content.php -->
+    <?php include 'partials/data/main-content.php';?>
+
+    <!-- HEADER -->
     <header class="header">
         <div class="header__content">
             <img class="header__content__logo" src="dist/assets/images/spotify-logo.png" alt="">
         </div>
     </header>
 
+    <!-- MAIN CONTENT AREA -->
     <main class="main">
         <div class="main__content">
             <?php foreach($albums as $album) { ?>

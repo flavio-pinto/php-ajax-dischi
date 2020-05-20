@@ -1,3 +1,4 @@
+<!-- Albums array -->
 <?php
 $albums = [
     [

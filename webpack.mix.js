@@ -13,6 +13,15 @@ let mix = require('laravel-mix');
 
 mix.js('src/scripts/main.js', 'dist/assets/scripts')
     .sass('src/scss/styles.scss', 'dist/assets/styles')
+    .browserSync({
+        proxy: 'http://localhost/php-ajax-dischi/',
+        files: [
+            "dist/assets/scripts/main.js",
+            "dist/assets/styles/styles.css",
+            "./**/*.php",
+        ],
+        notify: false
+    })
     .options({
         processCssUrls: false
     });

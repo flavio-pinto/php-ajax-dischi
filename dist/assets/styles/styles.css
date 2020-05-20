@@ -1,3 +1,5 @@
+/* Import styles from partials */
+/* COMMON STYLES - VARIABLES - MIXINS */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +12,7 @@ body {
   background: #0e0e0e;
 }
 
+/* HEADER STYLES */
 .header {
   position: fixed;
   background: #0e0e0e;
@@ -26,6 +29,7 @@ body {
   max-height: 100%;
 }
 
+/* MAIN CONTENT STYLES */
 .main {
   background: #1a1a1a;
 }
@@ -52,6 +56,7 @@ body {
   margin-right: 100px;
   margin-bottom: 30px;
   padding: 30px;
+  cursor: pointer;
 }
 .main__content__box:nth-child(3n+0) {
   margin-right: 0;

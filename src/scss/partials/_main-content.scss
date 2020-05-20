@@ -1,3 +1,4 @@
+/* MAIN CONTENT STYLES */
 .main {
     background: $secondary__background__col;
     &__content {
@@ -13,6 +14,7 @@
             margin-right: 100px;
             margin-bottom: 30px;
             padding: 30px;
+            cursor: pointer;
             &:nth-child(3n+0) {
                 margin-right: 0;
             }
