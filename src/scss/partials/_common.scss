@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+//VARIABLES
+$main__background__col: #0e0e0e;
+$secondary__background__col: #1a1a1a;
+
+//MIXINS
+//Flex
+@mixin display-flex($flexDirection: row, $justifyContent: center, $alignItems: center, $flexWrap: wrap) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $flexWrap;
+}
+
+//Container
+@mixin container($width: 100%) {
+    width: $width;
+    margin: 0 auto;
+}
+
+body {
+    background: $main__background__col;
+}

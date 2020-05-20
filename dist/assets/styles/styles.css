@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+}
+
+.header {
+  position: fixed;
+  background: #0e0e0e;
+  z-index: 9999;
+  width: 100%;
+  padding: 20px;
+}
+.header__content {
+  width: 1197px;
+  margin: 0 auto;
+  height: 50px;
+}
+.header__content__logo {
+  max-height: 100%;
+}
+
+.main {
+  background: #1a1a1a;
+}
+.main__content {
+  width: 1197px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 170px 0 50px;
+}
+.main__content__box {
+  background: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-basis: calc(100% / 3 - 100px);
+  height: 440px;
+  margin-right: 100px;
+  margin-bottom: 30px;
+  padding: 30px;
+}
+.main__content__box:nth-child(3n+0) {
+  margin-right: 0;
+}
+.main__content__box img {
+  height: 250px;
+  margin-bottom: 15px;
+}
+.main__content__box__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+.main__content__box__artist {
+  opacity: 0.5;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.main__content__box__year {
+  font-size: 14px;
+}

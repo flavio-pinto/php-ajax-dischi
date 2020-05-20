@@ -1,0 +1,14 @@
+.header {
+    position: fixed;
+    background: $main__background__col;
+    z-index: 9999;
+    width: 100%;
+    padding: 20px;
+    &__content {
+        @include container(1197px);
+        height: 50px;
+        &__logo {
+            max-height: 100%;
+        }
+    }
+}
