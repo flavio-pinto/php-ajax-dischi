@@ -1,6 +1,3 @@
-<!-- Include content array from main-content.php -->
-<?php include_once 'partials/data/main-content.php';?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,15 +18,21 @@
     <!-- MAIN CONTENT AREA -->
     <main class="main">
         <div class="main__content">
-            <?php foreach($albums as $album) { ?>
-                <div class="main__content__box">
-                    <img src="<?php echo $album['cover'] ?>" alt="">
-                    <h3 class="main__content__box__title"><?php echo $album['title'] ?></h3>
-                    <h4 class="main__content__box__artist"><?php echo $album['artist'] ?></h4>
-                    <span class="main__content__box__year"><?php echo $album['year'] ?></span>
-                </div>
-            <?php } ?>
+            
         </div>
     </main>
+    
+    <!-- TEMPLATE HANDLEBARS -->
+    <script id="album-template" type="text/x-handlebars-template">
+        <div class="main__content__box">
+            <img src="{{cover}}" alt="{{title}}">
+            <h3 class="main__content__box__title">{{title}}</h3>
+            <h4 class="main__content__box__artist">{{artist}}</h4>
+            <span class="main__content__box__year">{{year}}</span>
+        </div>
+    </script>
+    <!-- JAVASCRIPT -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+    <script src="dist/assets/scripts/main.js"></script>
 </body>
 </html>

@@ -10983,7 +10983,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  console.log('JS is working!');
+  //References
+  var mainContent = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main__content'); //Init Handlebars
+
+  var source = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#album-template').html();
+  var template = Handlebars.compile(source); //Ajax
+
+  var settings = {
+    url: 'http://localhost/php-ajax-dischi/partials/scripts/import-data-json.php',
+    method: 'GET'
+  };
+  jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax(settings).done(function (res) {
+    console.log(res);
+  }).fail(function () {
+    console.log('Errore chiamata Ajax');
+  });
 });
 
 /***/ }),
