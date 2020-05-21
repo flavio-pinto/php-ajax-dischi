@@ -23,7 +23,9 @@
         <div class="main__content">
             <?php foreach($albums as $album) { ?>
                 <div class="main__content__box">
-                    <img src="<?php echo $album['cover'] ?>" alt="">
+                    <div class="wrapper__img">
+                        <img src="<?php echo $album['cover'] ?>" alt="">
+                    </div>
                     <h3 class="main__content__box__title"><?php echo $album['title'] ?></h3>
                     <h4 class="main__content__box__artist"><?php echo $album['artist'] ?></h4>
                     <span class="main__content__box__year"><?php echo $album['year'] ?></span>
