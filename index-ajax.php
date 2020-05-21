@@ -12,6 +12,10 @@
     <header class="header">
         <div class="header__content">
             <img class="header__content__logo" src="dist/assets/images/spotify-logo.png" alt="">
+            <div class="header__content__input">
+                <input type="text" class="header__content__input__search">
+                <button class="header__content__input__button">Search</button>
+            </div>
         </div>
     </header>
 

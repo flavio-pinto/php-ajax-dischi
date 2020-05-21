@@ -7,10 +7,15 @@
     width: 100%;
     padding: 20px;
     &__content {
+        @include display-flex($justifyContent: space-between);
         @include container(1197px);
         height: 50px;
         &__logo {
             max-height: 100%;
+        }
+        &__input__search,
+        &__input__button {
+            color: black;
         }
     }
 }
