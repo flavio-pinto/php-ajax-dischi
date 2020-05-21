@@ -10984,30 +10984,61 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   //References
-  var mainContent = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main__content'); //Init Handlebars
+  var mainContent = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main__content');
+  var inputBar = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__content__input__search'); //Init Handlebars
 
   var source = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#album-template').html();
-  var template = Handlebars.compile(source); //Ajax call for php data
-
+  var template = Handlebars.compile(source);
   var settings = {
     url: 'http://localhost/php-ajax-dischi/partials/scripts/import-data-json.php',
     method: 'GET'
-  };
+  }; //Ajax call for php data
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax(settings).done(function (res) {
     for (var i = 0; i < res.length; i++) {
-      var context = {
-        cover: res[i].cover,
-        title: res[i].title,
-        artist: res[i].artist,
-        year: res[i].year
-      };
-      var output = template(context);
-      mainContent.append(output);
+      printAlbums(res[i], template, mainContent);
     }
   }).fail(function () {
     console.log('Errore chiamata Ajax');
+  }); // Filter results with keyup event
+
+  inputBar.keyup(function () {
+    var inputText = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val().trim().toLowerCase(); //Reset list
+
+    mainContent.html('');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax(settings).done(function (data) {
+      data.forEach(function (el) {
+        var controlArtist = el.artist.toLowerCase();
+
+        if (controlArtist.includes(inputText)) {
+          printAlbums(el, template, mainContent);
+        }
+      }); // for (var i = 0; i < el.length; i++) {
+      //     var controlArtist = el.artist.toLowerCase();
+      //     if(controlArtist.includes(inputText)) {
+      //         printAlbums(mainContent, el, template);
+      //     }
+      // }
+    }).fail(function () {
+      console.log('Errore chiamata Ajax');
+    });
   });
-});
+}); //  <---- end doc ready
+
+/**********************
+ *******FUNCTIONS******
+ **********************/
+
+function printAlbums(item, template, mainContent) {
+  var context = {
+    cover: item.cover,
+    title: item.title,
+    artist: item.artist,
+    year: item.year
+  };
+  var output = template(context);
+  mainContent.append(output);
+}
 
 /***/ }),
 

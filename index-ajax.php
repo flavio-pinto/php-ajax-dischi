@@ -14,7 +14,6 @@
             <img class="header__content__logo" src="dist/assets/images/spotify-logo.png" alt="">
             <div class="header__content__input">
                 <input type="text" class="header__content__input__search">
-                <button class="header__content__input__button">Search</button>
             </div>
         </div>
     </header>
@@ -29,7 +28,9 @@
     <!-- TEMPLATE HANDLEBARS -->
     <script id="album-template" type="text/x-handlebars-template">
         <div class="main__content__box">
-            <img src="{{cover}}" alt="{{title}}">
+            <div class="wrapper__img">
+                <img src="{{cover}}" alt="{{title}}">
+            </div>
             <h3 class="main__content__box__title">{{title}}</h3>
             <h4 class="main__content__box__artist">{{artist}}</h4>
             <span class="main__content__box__year">{{year}}</span>

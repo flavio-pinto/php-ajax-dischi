@@ -43,9 +43,9 @@ $albums = [
     ],
 
     [
-        'cover' => 'dist/assets/images/chvrches.jpg',
+        'cover' => 'dist/assets/images/metallica.jpg',
         'title' => 'Love Is Dead',
-        'artist' => 'Chvrches',
+        'artist' => 'Metallica',
         'year' => '2018'
     ],
 
