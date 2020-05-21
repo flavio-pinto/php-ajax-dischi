@@ -10987,14 +10987,23 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   var mainContent = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.main__content'); //Init Handlebars
 
   var source = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#album-template').html();
-  var template = Handlebars.compile(source); //Ajax
+  var template = Handlebars.compile(source); //Ajax call for php data
 
   var settings = {
     url: 'http://localhost/php-ajax-dischi/partials/scripts/import-data-json.php',
     method: 'GET'
   };
   jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax(settings).done(function (res) {
-    console.log(res);
+    for (var i = 0; i < res.length; i++) {
+      var context = {
+        cover: res[i].cover,
+        title: res[i].title,
+        artist: res[i].artist,
+        year: res[i].year
+      };
+      var output = template(context);
+      mainContent.append(output);
+    }
   }).fail(function () {
     console.log('Errore chiamata Ajax');
   });
