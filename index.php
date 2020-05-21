@@ -1,3 +1,5 @@
+<!-- Include content array from main-content.php -->
+<?php include_once 'partials/data/main-content.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +10,6 @@
     <title>PHP Dischi</title>
 </head>
 <body>
-    <!-- Include content array from main-content.php -->
-    <?php include 'partials/data/main-content.php';?>
-
     <!-- HEADER -->
     <header class="header">
         <div class="header__content">
